@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -n "instalador de visual studio code presiona 1 para instalar-->"
+read s
+
+if [ $s = 1 ]; then
+apt install software-properties-common apt-transport-https curl
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+apt update
+apt install code
+fi
